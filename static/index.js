@@ -94,29 +94,13 @@ function askBot() {
             }
 
             $.ajax({
-                type: 'POST',
-                url: "/bot-response",
-                data: JSON.stringify(chat_input_data),
-                dataType: "json",
-                contentType: 'application/json',
-                    success: function (result) {
-                        
-                        $("#chat_messages").append('<div class="bot__messages">' + result.bot_res + ' </div>')                        
-                        $('.chatbox__messages__cotainer').animate({
-                            scrollTop: $('.chatbox__messages__cotainer')[0].scrollHeight}, 1000);
-                    },
-                    error: function (result) {
-                        alert(result.responseJSON.message)
-                    }
+
+                
             });
 
         }
 
     })
-    $('#bot_input_text').keypress(function(e){
-        
-        if(e.which == 13){         
-            $('#send_button').click(); //Dispara o evento de clicar do botão Enviar
-        }
-    });
+
+    
 }
